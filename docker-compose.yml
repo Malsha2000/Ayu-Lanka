@@ -1,6 +1,30 @@
 version: '3.8'
 
 services:
+  gateway:
+    image: ayulanka.azurecr.io/ayulanka/gateway:latest
+    build: ./gateway
+    ports:
+      - 80:80
+    environment:
+      - USER_MANAGEMENT_API_URL=http://user-management:3001
+      - PRODUCT_MANAGEMENT_API_URL=http://product-management:3002
+      - PAYMENT_MANAGEMENT_API_URL=http://payment-management:3007
+      - PRODUCTCHECKOUT_MANAGEMENT_API_URL=http://order-management:3005
+      - CART_MANAGEMENT_API_URL=http://cart-management:3006
+      - SELLER_MANAGEMENT_API_URL=http://cart-management:3004
+      - WEB_URL=http://ayulanka-web:3000
+    depends_on:
+      - user-management
+      - product-management
+      - payment-management
+      - order-management
+      - cart-management
+      - seller-management
+      - ayulanka-web
+    networks:
+      - ayulanka
+  
   user-management:
       image: ayulanka.azurecr.io/ayulanka/user-management:latest
       build: ./userManagement
@@ -54,23 +78,6 @@ services:
         - TOKEN_KEY=${TOKEN_KEY}
         - EMAIL_API_KEY=${EMAIL_API_KEY}
         - EMAIL_SECRET_KEY=${EMAIL_SECRET_KEY}
-
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - /etc/nginx/conf.d
-      - /var/log/nginx:/var/log/nginx
-    depends_on:
-      - user-management
-      - product-management
-      - payment-management
-      - order-management
-      - cart-management
-      - seller-management
-    restart: always
 
   ayulanka-web:
       image: ayulanka.azurecr.io/ayulanka/ayulanka-web:latest
