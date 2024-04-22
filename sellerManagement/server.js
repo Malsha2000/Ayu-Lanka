@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3004;
 app.use(cors());
 app.use(express.json());
 
-const URL = process.env.CUSTOMCONNSTR_MONGODB_URL;
+const URL = process.env.MONGODB_URL;
 console.log('URL', URL);
 
 mongoose.connect(URL, {
@@ -26,7 +26,7 @@ connection.once("open", () => {
 
 const sellerRouter = require("./routes/sellerRoutes");
 
-app.use("/api/seller",sellerRouter);
+app.use("/api",sellerRouter);
 
 
 app.listen(PORT, () => {

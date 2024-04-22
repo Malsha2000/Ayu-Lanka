@@ -55,25 +55,32 @@ services:
         - EMAIL_API_KEY=${EMAIL_API_KEY}
         - EMAIL_SECRET_KEY=${EMAIL_SECRET_KEY}
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /etc/nginx/conf.d
+      - /var/log/nginx:/var/log/nginx
+    depends_on:
+      - user-management
+      - product-management
+      - payment-management
+      - order-management
+      - cart-management
+      - seller-management
+    restart: always
+
   ayulanka-web:
       image: ayulanka.azurecr.io/ayulanka/ayulanka-web:latest
       build: ./ayulanka-web
       ports:
         - 3000:3000
       environment:
-        - REACT_APP_USER_MANAGEMENT_API_URL=http://user-management:3001
-        - REACT_APP_PRODUCT_MANAGEMENT_API_URL=http://product-management:3002
-        - REACT_APP_PAYMENT_MANAGEMENT_API_URL=http://payment-management:3007
-        - REACT_APP_PRODUCTCHECKOUT_MANAGEMENT_API_URL=http://order-management:3005
-        - REACT_APP_CART_MANAGEMENT_API_URL=http://cart-management:3006
-        - REACT_APP_SELLER_MANAGEMENT_API_URL=http://cart-management:3004
+        - REACT_APP_API_URL=http://nginx/
       depends_on:
-        - user-management
-        - product-management
-        - payment-management
-        - order-management
-        - cart-management
-        - seller-management
+        - nginx
 
 volumes:
   mongodb_data:
