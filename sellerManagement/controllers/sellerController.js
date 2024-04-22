@@ -5,7 +5,7 @@ const SellerService = require("../services/sellerService");
 //controller for add Seller
 module.exports.createSellerController = async (req, res) => {
     try {
-        let serviceResponse = await SellerService.createSellerService(req);
+        let serviceResponse = await SellerService.createSellerService(req.body);
         if ((serviceResponse.msg = "success")) {
             // return serviceResponse
             return res.status(200).send({ message: "New Seller is added" });
@@ -22,7 +22,7 @@ module.exports.createSellerController = async (req, res) => {
 module.exports.getOneSellerController = async (req, res) => {
 
     try {
-        let serviceResponse = await SellerService.getOneSellerService(req);
+        let serviceResponse = await SellerService.getOneSellerService(req.body);
 
         if ((serviceResponse.msg = "success")) {
             // return serviceResponse
