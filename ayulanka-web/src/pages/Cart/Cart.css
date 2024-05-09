@@ -1,0 +1,19 @@
+/* Styling for the cart page */
+.container {
+    padding: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+/* Responsive table images */
+.table img {
+    width: auto;
+    max-width: 100px; /* Adjust as necessary */
+    height: auto;
+}

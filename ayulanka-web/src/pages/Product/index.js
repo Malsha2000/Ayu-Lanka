@@ -5,10 +5,10 @@ import './product.css';
 
 // Data for products and carousel images
 const allProducts = [
-  { name: 'Herbal Tea', description: 'Calming tea blend', imageUrl: 'https://image.shutterstock.com/image-photo/glass-cup-hot-aromatic-tea-260nw-1146290894.jpg' },
-  { name: 'Echinacea', description: 'Immune booster', imageUrl: 'https://image.shutterstock.com/image-photo/echinacea-tea-260nw-1146290894.jpg' },
-  { name: 'Ginger Tea', description: 'Soothing for stomach', imageUrl: 'https://image.shutterstock.com/image-photo/ginger-tea-260nw-1146290894.jpg' },
-  { name: 'Peppermint Tea', description: 'Refreshing and invigorating', imageUrl: 'https://image.shutterstock.com/image-photo/peppermint-tea-260nw-1146290894.jpg' },
+  { name: 'Herbal Tea', description: 'Calming tea blend', imageUrl: 'https://image.shutterstock.com/image-photo/glass-cup-hot-aromatic-tea-260nw-1146290894.jpg', price: 9.99  },
+  { name: 'Echinacea', description: 'Immune booster', imageUrl: 'https://image.shutterstock.com/image-photo/glass-cup-hot-aromatic-tea-260nw-1146290894.jpg' , price: 19.99 },
+  { name: 'Echinacea', description: 'Immune booster', imageUrl: 'https://image.shutterstock.com/image-photo/glass-cup-hot-aromatic-tea-260nw-1146290894.jpg' , price: 7.99 },
+  { name: 'Echinacea', description: 'Immune booster', imageUrl: 'https://image.shutterstock.com/image-photo/glass-cup-hot-aromatic-tea-260nw-1146290894.jpg' , price: 6.99 },
 ];
 
 const carouselImages = [

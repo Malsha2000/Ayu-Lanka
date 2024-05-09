@@ -1,0 +1,49 @@
+.card-image-top {
+    height: 200px; /* Fixed height for image consistency */
+    object-fit: cover; /* Ensures images cover the area well without distortion */
+  }
+  
+  .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slight raise effect on hover */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* Shadow effect for depth */
+  }
+  
+  .text-center {
+    text-align: center; /* Center-align the title */
+  }
+  
+  .h-100 {
+    height: 100%; /* Ensures all cards are of equal height */
+  }
+  
+  .shadow-sm {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+  
+  .btn-primary {
+    margin-top: auto; /* Aligns button to bottom of card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fa-eye {
+    margin-left: 10px; /* Space between text and icon */
+  }
+  .card-text {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #333; /* Subtle color for better readability */
+  }
+  
+  .mb-2 {
+    margin-bottom: .5rem!important; /* Bootstrap spacing utility class */
+  }
+  
+  .text-muted {
+    color: #6c757d!important; /* Bootstrap's muted text color */
+  }
+  
