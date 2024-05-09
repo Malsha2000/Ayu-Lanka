@@ -11,8 +11,8 @@ function ProductList({ products, title }) {
     };
   
     return (
-      <Container>
-        <h2>{title}</h2>
+      <Container className='mt-5 mb-5'>
+        <h2 className='mb-5'>{title}</h2>
         <Row>
           {products.map((product, idx) => (
             <Col key={idx} sm={12} md={6} lg={4} xl={3}>
@@ -21,7 +21,7 @@ function ProductList({ products, title }) {
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text>{product.description}</Card.Text>
-                  <Button variant="primary" onClick={() => goToProductDetails(product.id)}>Buy Now</Button>
+                  <Button variant="primary" onClick={() => goToProductDetails(product.id)}>View Product</Button>
                 </Card.Body>
               </Card>
             </Col>

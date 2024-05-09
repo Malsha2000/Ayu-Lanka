@@ -1,14 +1,114 @@
 .product-details-container {
-    min-height: 80vh;
-    /* Ensures the container takes full viewport height */
+    min-height: 80vh; /* Ensures the container takes full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+   /* Light background for better readability */
 }
 
 .product-card {
-    width: 100%;
-    /* Full width on smaller screens */
-    max-width: 540px;
-    /* Max width on larger screens */
+    width: 100%; /* Full width on smaller screens */
+    max-width: 1000px; /* Max width on larger screens for better layout */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Adds shadow for better focus and depth */
+    border: none; /* Removes default card border */
+    overflow: hidden; /* Ensures no content spills out */
+}
+
+.product-card img {
+    width: 100%; /* Ensures image takes full column width */
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the area properly without stretching */
+}
+
+.btn-block {
+    margin-top: 10px;
+    width: 100%; /* Full width buttons for better mobile responsiveness */
+    padding: 8px 16px; /* Adequate padding for better touch interaction */
+}
+
+/* Styling for the tab navigation */
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6; /* Adds a subtle line under the tab headers */
+}
+
+.nav-item .nav-link {
+    border: none; /* Removes border around the tab */
+    padding: 10px 15px; /* Comfortable padding around tab titles */
+    margin-right: 5px; /* Spacing between tabs */
+    background-color: #f8f9fa; /* Light background for tabs */
+    color: #495057; /* Subtle color for text */
+    border-radius: 5px 5px 0 0; /* Rounded corners at the top */
+}
+
+.nav-item .nav-link.active {
+    background-color: #fff; /* Active tab has a white background to blend with the content area */
+    color: #0056b3; /* Highlight color for active tab text */
+    border-color: #dee2e6 #dee2e6 #fff; /* Specific border color to blend with content */
+}
+
+/* Styles for list groups in specifications */
+.list-group-item {
+    border: none; /* Removes default list group border */
+    background-color: transparent; /* Transparent background for a clean look */
+    padding-left: 0; /* Aligns text with the content outside the list */
+}
+
+.card {
+    border: none; /* Consistent style without borders */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for cards */
+}
+
+.card-body {
+    padding: 20px; /* Ample padding for content within cards */
+}
+/* Enhancements for the Specifications Tab */
+.specifications-tab {
+    background-color: #fff; /* White background for a clean look */
+    padding: 20px; /* Padding for spacing inside the tab */
+    border-top: 1px solid #dee2e6; /* Subtle top border for separation */
+}
+
+.specifications-list {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.specifications-item {
+    padding: 10px 0; /* Padding for each item */
+    border-bottom: 1px solid #e9ecef; /* Subtle line under each item for separation */
+    display: flex;
+    justify-content: space-between; /* Spreads content across the line */
+    align-items: center;
+    font-size: 16px; /* Larger text for readability */
+    color: #333; /* Darker text for better contrast */
+}
+
+.specifications-item:last-child {
+    border-bottom: none; /* Removes border from the last item */
+}
+
+.specification-key {
+    font-weight: bold; /* Makes the key bold */
+    flex: 1; /* Allocates space flexibly */
+}
+
+.specification-value {
+    flex: 2; /* Gives more space to the value */
+    text-align: right; /* Aligns the text to the right */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .specifications-item {
+        flex-direction: column; /* Stacks the key and value vertically */
+        align-items: flex-start; /* Aligns items to the start */
+        text-align: left; /* Ensures text alignment is consistent */
+    }
+
+    .specification-value {
+        text-align: left; /* Keeps text alignment left on smaller screens */
+        padding-top: 5px; /* Adds a small padding above for visual separation */
+    }
 }
