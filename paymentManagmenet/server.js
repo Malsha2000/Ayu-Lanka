@@ -24,9 +24,9 @@ connection.once("open", () => {
   console.log("Mongodb Connection Success !" , PORT);
 });
 
-const paymentRouter = require("./routes/paymentRoutes")
+const paymentRouter = require("./app/app")
 
-app.use("/payment", paymentRouter)
+app.use("/api", paymentRouter)
 
 
 app.listen(PORT, () => {

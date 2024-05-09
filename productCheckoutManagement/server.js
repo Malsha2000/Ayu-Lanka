@@ -24,9 +24,9 @@ connection.once("open", () => {
   console.log("Mongodb Connection Success !" , PORT);
 });
 
-const orderRouter = require("./routes/orderRoutes");
+const orderRouter = require("./app/app");
 
-app.use("/order", orderRouter)
+app.use("/api", orderRouter)
 
 
 app.listen(PORT, () => {
