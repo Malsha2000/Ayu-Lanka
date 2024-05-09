@@ -6,51 +6,46 @@ const Schema = mongoose.Schema;
 const delivery = new Schema({
 
     orderID: {
-        type: String,
-        maxlength: 100,
+        type: Schema.Types.ObjectId,
         required: true,
     },
-
-    street: {
-        type: String,
-        maxlength: 100,
-        required: true,
+    deliveryAddress: {
+        street: {
+            type: String,
+            maxlength: 100
+        },
+        city: {
+            type: String,
+            maxlength: 100
+        },
+        province: {
+            type: String,
+            maxlength: 100
+        },
+        postalCode: {
+            type: String,
+            maxlength: 100
+        },
+        country: {
+            type: String,
+            maxlength: 100
+        },
+        phone: {
+            type: String,
+            maxlength: 20
+        },
+        email: {
+            type: String,
+            maxlength: 100
+        }
     },
-    city: {
-        type: String,
-        maxlength: 100,
-        required: true,
+    dispatchedDate: {
+        type: Date
     },
-    province: {
-        type: String,
-        maxlength: 100,
-        required: true,
-    },
-    postalCode: {
-        type: String,
-        maxlength: 100,
-        required: true,
-    },
-    country: {
-        type: String,
-        maxlength: 100,
-        required: true,
-    },
-    phone: {
-        type: String,
-        maxlength: 20,
-        required: true,
-    },
-    email: {
-        type: String,
-        maxlength: 100,
-        required: true,
+    status: {
+        type: Number,
+        default: 0 // pending => 0, completed => 10
     }
-
-
-
-
-
 })
 
 const Delivery = mongoose.model("Delivery", delivery);

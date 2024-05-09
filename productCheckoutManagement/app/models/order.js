@@ -5,74 +5,21 @@ const Schema = mongoose.Schema;
 
 const order = new Schema({
 
-    orderID: {
-        type: String,
-        maxlength: 100,
-        required: true,
+    userId: {
+        type: Schema.Types.ObjectId
     },
-
-    productID: {
-        type: String,
-        maxlength: 100,
-        required: true,
+    cartId: {
+        type: Schema.Types.ObjectId
     },
-
-    sellerID: {
-        type: Schema.Types.ObjectId,
-        ref: 'Seller',
-        index: true,
-        required: true
-    },
-
-    deliveryServiceID: {
-        type: String,
-        maxlength: 100,
-        required: true,
-    },
-
-    // deliveryAddress: {
-    //     street: {
-    //         type: String,
-    //         maxlength: 100,
-    //         required: true,
-    //     },
-    //     city: {
-    //         type: String,
-    //         maxlength: 100,
-    //         required: true,
-    //     },
-    //     province: {
-    //         type: String,
-    //         maxlength: 100,
-    //         required: true,
-    //     },
-    //     postalCode: {
-    //         type: String,
-    //         maxlength: 100,
-    //         required: true,
-    //     },
-    // },
-
     paymentID: {
-        type: String,
-        maxlength: 100,
+        type: Schema.Types.ObjectId
     },
     isOnlinePayment: {
         type: Boolean,
-        default: false,
-        required: true,
-
+        default: false
     },
-    unitPrice: {
-        type: Number,
-        min: 0,
-        required: true,
-    },
-    quantity: {
-        type: Number,
-        min: 0,
-        required: true,
-
+    orderDate: {
+        type: Date
     },
     total: {
         type: Number,

@@ -150,3 +150,20 @@
 //         return res.status(300).send({message: "Cannot delete...!", err: err.message});
 //     }
 // };
+
+const OrderService = require("../services/orderService");
+const { ResponseStatusCodes } = require('../util/constants/responseStatusCodes');
+const { ResponseCommonMessages } = require('../util/constants/responseCommonMessages');
+const Logger = require('../util/logging/logger');
+
+//controller for add Product
+module.exports.createOrderController = async (req, res) => {
+    try {
+		const paymentResponse = await OrderService.createOrderService(req.body);
+		return res.status(200).json({ success: true, data: paymentResponse.data, showMessage: false });
+	} catch (err) {
+		Logger.log('createOrderService', null, null,err);
+		return res.status(err.status || ResponseStatusCodes.INTERNAL_SERVER_ERROR).json({ success: false, msg: err.msg || ResponseCommonMessages.INTERNAL_SERVER_ERROR });
+	}
+   
+};

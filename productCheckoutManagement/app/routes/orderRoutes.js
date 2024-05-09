@@ -96,7 +96,7 @@ module.exports = function (router) {
   //route for add Product
   router.post('/add',
     jsonParser,
-    orderController.createPaymentController
+    orderController.createOrderController
   );
 
   // //route for get Product details
