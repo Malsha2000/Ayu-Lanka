@@ -1,0 +1,61 @@
+/* General Modal Styling */
+.modal-content {
+    background-color: #f8f9fa; /* Light background for the modal */
+    border-radius: 8px; /* Rounded corners for the modal */
+}
+
+/* Header and Footer Styling */
+.modal-header, .modal-footer {
+    border-bottom: 1px solid #dee2e6; /* Subtle border for the header */
+    border-top: 1px solid #dee2e6; /* Subtle border for the footer */
+    background-color: #fff; /* White background for contrast */
+}
+
+.modal-title {
+    color: #007bff; /* Theme color for the modal title */
+}
+
+/* List Group Item */
+.list-group-item {
+    background-color: #f8f9fa; /* Matching background to modal for integration */
+    border: none; /* Removing borders for a cleaner look */
+    padding: 12px 20px; /* Spacious padding for readability */
+}
+
+/* Form Styling */
+.form-label {
+    font-weight: bold; /* Making labels bold */
+    color: #343a40; /* Dark color for better readability */
+    margin-bottom: 10px; /* Tight spacing between label and input */
+}
+
+.form-control {
+    background-color: #fff; /* White background for inputs */
+    border: 1px solid #ced4da; /* Subtle borders for inputs */
+    border-radius: 5px; /* Slightly rounded borders for inputs */
+    padding: 8px 12px; /* Comfortable padding inside inputs */
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff; /* Primary theme color */
+    border-color: #007bff; /* Matching border color */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Secondary button color */
+    border-color: #6c757d; /* Matching border color */
+}
+
+/* Icon Styling */
+.fa-icon {
+    color: #007bff; /* Icon color matching the theme */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+    .form-group {
+        margin-bottom: 15px; /* Increased bottom margin on smaller screens */
+    }
+}

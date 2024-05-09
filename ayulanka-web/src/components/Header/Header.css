@@ -1,0 +1,20 @@
+.Navbar {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Professional font */
+  }
+  
+  .Nav-link {
+    margin-right: 15px; /* Space between nav items */
+  }
+  
+  .Navbar-brand {
+    font-weight: bold; /* Bold brand name for emphasis */
+  }
+  
+  .fa-shopping-cart {
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .Badge {
+    margin-left: 5px; /* Space after the text */
+  }
+  

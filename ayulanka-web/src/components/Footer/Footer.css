@@ -1,12 +1,25 @@
 .footer {
-    background-color: #f8f9fa; /* Light gray background */
-    padding: 20px 0; /* Padding for aesthetic spacing */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* Set a fixed height */
-  }
-.text-new{
-    display: flex;
-    justify-content: center;
+  background-color: #343a40; /* Dark background for footer */
+  color: #ffffff; /* Light text for contrast */
+}
+
+.footer-title {
+  font-size: 18px; /* Larger font size for section titles */
+  font-weight: bold; /* Bold font weight for titles */
+  margin-bottom: 15px; /* Space below titles */
+}
+
+.social-icon {
+  color: #ffffff; /* White color for icons */
+  margin-right: 10px; /* Space between icons */
+  font-size: 24px; /* Icon size */
+}
+
+.social-icon:hover {
+  color: #cccccc; /* Lighter color on hover */
+}
+
+.list-unstyled {
+  padding-left: 0; /* Remove default padding */
+  list-style-type: none; /* Remove bullet points */
 }
