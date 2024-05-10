@@ -3,43 +3,35 @@ const mongoose = require("mongoose");
 let Order = require("../models/order");
 let Delivery = require("../models/delivery")
 
-module.exports.createOrderService = async (req, res) => {
+module.exports.createOrderService = async (requestBody) => {
     console.log("reqqOrder>>", req)
     try {
-        const orderID = req.orderID;
-        const productID = req.productID;
-        const sellerID = req.sellerID;
-        const deliveryServiceID = req.deliveryServiceID;
-        const paymentID = req.paymentID;
-        const unitPrice = Number(req.unitPrice);
-        const quantity = Number(req.quantity);
-        const total = Number(req.total);
-        const isOnlinePayment = req.isOnlinePayment;
+        const userId = requestBody.userId;
+        const cartId = requestBody.cartId;
+        const isOnlinePayment = requestBody.isOnlinePayment;
+        const paymentID = requestBody.paymentID;
+        const total = Number(requestBody.total);
 
+        // Get current date
+        const date = new Date();
 
         const newOrder = new Order({
-            orderID,
-            productID,
-            sellerID,
-            deliveryServiceID,
+            userId,
+            cartId,
             paymentID,
-            unitPrice,
-            quantity,
+            isOnlinePayment,
             total,
-            isOnlinePayment
+            orderDate: date
         });
+
         let reponse = await newOrder.save();
 
-        if (reponse) {
             return {
                 msg: "success",
                 data: reponse,
-            };
-        } else {
-            msg: "failed";
-            data: reponse;
-        }
-    } catch (err) {
+            }
+    
+        } catch (err) {
         throw err;
     }
 };
