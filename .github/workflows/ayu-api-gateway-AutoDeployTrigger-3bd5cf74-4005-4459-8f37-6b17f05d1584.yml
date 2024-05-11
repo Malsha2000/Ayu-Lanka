@@ -1,4 +1,4 @@
-name: Trigger auto deployment for ayu-seller
+name: Trigger auto deployment for ayu-api-gateway
 
 # When this action will be executed
 on:
@@ -7,8 +7,8 @@ on:
     branches: 
       [ main ]
     paths:
-    - 'sellerManagement/**'
-    - '.github/workflows/ayu-seller-AutoDeployTrigger-a793804f-e4ba-4d08-864c-7e5b696a6600.yml'
+    - 'api-gateway/**'
+    - '.github/workflows/ayu-api-gateway-AutoDeployTrigger-3bd5cf74-4005-4459-8f37-6b17f05d1584.yml'
 
   # Allow manual trigger 
   workflow_dispatch:      
@@ -27,7 +27,7 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          projectBaseDir: sellerManagement
+          projectBaseDir: api-gateway
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -35,20 +35,20 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AYUSELLER_AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AYUSELLER_AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AYUSELLER_AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AYUAPIGATEWAY_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AYUAPIGATEWAY_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AYUAPIGATEWAY_AZURE_SUBSCRIPTION_ID }}
 
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
         with:
-          appSourcePath: ${{ github.workspace }}/sellerManagement 
+          appSourcePath: ${{ github.workspace }}/api-gateway 
           registryUrl: ayulanka.azurecr.io
-          registryUsername: ${{ secrets.AYUSELLER_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.AYUSELLER_REGISTRY_PASSWORD }}
-          containerAppName: ayu-seller
+          registryUsername: ${{ secrets.AYUAPIGATEWAY_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.AYUAPIGATEWAY_REGISTRY_PASSWORD }}
+          containerAppName: ayu-api-gateway
           resourceGroup: CTSE_Assignment
-          imageToBuild: ayulanka.azurecr.io/ayu-seller:${{ github.sha }}
+          imageToBuild: ayulanka.azurecr.io/ayu-api-gateway:${{ github.sha }}
           _buildArgumentsKey_: |
             _buildArgumentsValues_
 
