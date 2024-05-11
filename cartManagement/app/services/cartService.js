@@ -52,7 +52,7 @@ module.exports.createCartService = async (requestBody) => {
 
 module.exports.addItemToCartService = async (requestBody) => {
   try {
-
+    console.log("data", requestBody)
     const cartId = requestBody.cartId;
     const itemId = requestBody.itemId;
     const userId = requestBody.userId;
@@ -107,7 +107,7 @@ module.exports.addItemToCartService = async (requestBody) => {
 
 module.exports.checkAvailableCartService = async (requestBody) => {
   try {
-
+    console.log("data", requestBody)
     const userId = requestBody.userId;
 
     const cartObj = await Cart.findOne({ 'userId': userId, status: 0 });

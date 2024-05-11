@@ -8,7 +8,7 @@ on:
       [ main ]
     paths:
     - 'cartManagement/**'
-    - '.github/workflows/ayu-cart-AutoDeployTrigger-3beb4c9a-5408-4923-8076-f1a0c377164a.yml'
+    - '.github/workflows/ayu-cart-AutoDeployTrigger-7b662f9e-a796-4948-9b32-637585bb9340.yml'
 
   # Allow manual trigger 
   workflow_dispatch:      
